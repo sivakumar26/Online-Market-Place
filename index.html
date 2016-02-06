@@ -1,0 +1,586 @@
+ <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+        <meta charset="utf-8">
+        <title>eDeals - Your one stop shop for everything!</title>
+        <meta name="description" content="">
+        <!-- Mobile Specific Metascyp
+    ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+         <!-- CSS
+         ================================================== -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        <!-- Animation -->
+        <link rel="stylesheet" href="css/animate.css" />
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="css/owl.carousel.css"/>
+         <link rel="stylesheet" href="css/owl.theme.css"/>
+         <!-- Pretty Photo -->
+         <link rel="stylesheet" href="css/prettyPhoto.css"/>
+         <link rel="stylesheet" href="css/flexslider.css"/>
+         <link rel="stylesheet" href="css/red.css"/>
+
+        <!-- Template styles-->
+        <link rel="stylesheet" href="css/custom.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
+        <script src="js/homePageJS.js">
+        
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+
+ <body data-spy="scroll" data-target=".navbar-fixed-top">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
+    	<div class="container">
+    		<!-- <div class="row"> -->
+                 <div class="navbar-header ">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                                <img src="images/logo3.png" alt="" class="img-responsive">
+                        </a>
+                 </div><!--Navbar header End-->
+                 	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+                        <ul class="nav navbar-nav navbar-right ">
+                           	<li class="active"> <a href="#home" class="page-scroll">Home </a></li>
+                            <li><a data-toggle="modal" data-target="#signUpModal" >Sign Up</a> </li>
+                            <li><a data-toggle="modal" data-target="#loginModal">Login</a> </li>
+                            <li><a href="#service" class="page-scroll" >Features</a> </li>
+                            <li><a href="#team" class="page-scroll">Our Team </a> </li>
+                            
+                            <li><a href="#contact" class="page-scroll">Contact Us</a> </li>
+                        </ul>
+                     </nav>
+                         
+                </div><!-- /.container-fluid -->
+                
+                  
+</header>
+  <div class="modal fade" id="signUpModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><button type="button" >Signup with Facebook</button></h4>
+        </div>
+        <!-- Modal Body -->
+        <form role="form" name="signupForm" id="signupForm" method="post" onsubmit="return validateSignUp();" action="productList.php">
+        <div class="modal-body">              
+            <br />
+            <b>-----------or------------</b><br />
+            
+            <h4>SignUp with Email</h4>                       
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fname" placeholder="First Name"  required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="lname" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email Address"  required>
+                     <p id="emailErrorMessage"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Password"  required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="rePassword" placeholder="Retype Password" onBlur="validatePassword()"  required>
+                <p id="passwordErrorMessage"></p>
+                </div>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="submit1">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                
+        </div>
+   
+    </form>
+    </div>
+  </div>	
+</div>
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><button type="button" >Login with Facebook</button></h4>
+        </div>
+        <!-- Modal Body -->
+        <form role="form" name="loginForm" id="loginForm" method="post" onsubmit="return validateLogin();" action="productList.php">
+        <div class="modal-body">
+        	<br />
+            <b>-----------or------------</b><br />
+            <h4>Login with Email ID</h4>       
+                <div class="form-group">
+                    <input type="email" class="form-control" id="emaillogin" placeholder="Email Address"  required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="passwordlogin" placeholder="Password"  required>
+                    <p id="loginErrorMessage"></p>
+                </div>
+                  
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="submit2">Login</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                
+        </div>
+   
+    </form>
+    </div>
+  </div>	
+</div>
+ <!-- Slider start -->
+    <section id="home" class="hero landing hero-section">
+        <div class="video-background-container">
+            <video preload="auto" autoplay loop muted class="video-background">
+                <source type="video/mp4" src="videos/shopping.mp4" />
+                <source type="video/ogg" src="videos/shopping.ogg" />
+                <source type="video/webm" src="videos/shopping.webm" />
+            </video>
+        </div> 
+
+        <div class="parallax-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="hero-text wow fadeIn" data-wow-delay=".8s">
+                    <h3 class="hero-title">eDeals </h3>
+                    <p class="hero-description">Your one stop shop for everything!</p>
+                    <p class="hero-buttons">
+                        <a href="#service" class="btn btn-dark">
+                            <strong>Learn More </strong> </i>
+                        </a>
+                         <a a data-toggle="modal" data-target="#signUpModal" class="btn btn-main featured">
+                            <strong>Join Now </strong> </i>
+                        </a>
+
+                    </p>
+                </div><!--/ Hero text end -->
+            </div><!--/ Hero content end -->
+        </div><!--/ Container end -->
+    </section><!--/ Home end -->
+
+<!-- Service Area start -->
+
+    <section id="service">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature_header text-center">
+                            <h3 class="feature_title">Our <b>Features</b></h3>
+                            <h4 class="feature_sub">We are a Single Market Place that collaborates various individual sites. We sell a wide variety of products. Check out our Products section for exciting range!</h4>
+                            <div class="divider"></div>
+                        </div>
+                    </div>  <!-- Col-md-12 End -->
+                </div>
+                <div class="row">
+                    <div class="main_feature text-center">
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                                <div class="feature_content">
+                                    <i class="fa fa-search"></i>
+                                    <h5>Search</h5>
+                                    <p>Can't find the item you are looking for? Call us and we are happy to serve you.</p>
+                                   
+                                </div>
+                            </div>
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                                <div class="feature_content">
+                                    <i class="fa fa-plane"></i>
+                                    <h5>Shipping</h5>
+                                    <p>Shipping is always free with Online Market place. </p>
+                                   
+                                </div>
+                        </div> <!-- Col-md-4 Single_feature End -->
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                                <div class="feature_content">
+                                    <i class="fa fa-cog"></i>
+                                    <h5>Full time Support</h5>
+                                    <p>Our customer support is excellent and we offer 24/7 customer service.  </p>
+                                    
+                                </div>
+                        </div> <!-- Col-md-4 Single_feature End -->
+                        <div class="col-md-3 col-xs-12 col-sm-6">
+                                <div class="feature_content">
+                                    <i class="fa fa-money"></i>
+                                    <h5>Price</h5>
+                                    <p>We offer products at the best possible rate. Lowest rate gauranteed.   </p>
+                                    
+                                </div>
+                        </div> <!-- Col-md-4 Single_feature End -->
+                        <!-- <button class="btn btn-main"> Read More</button> -->
+                    </div>
+            </div>  <!-- Row End -->
+        </div>  <!-- Container End -->
+    </section>
+<!-- Service Area End -->
+
+<!-- Team MEmber Start -->
+<section id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title">Our <b>Team Members</b></h3>
+                    <h4 class="feature_sub">The team which made it possible </h4>
+                    <div class="divider"></div>
+                </div>
+            </div>  <!-- Col-md-12 End -->
+
+            <div id="owl-demo" class="owl-carousel owl-theme team-items">
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic6.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Koushik Ram</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic1.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Saikrishnan</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic2.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Sivakumar</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic5.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Venkat</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic5.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Abishek</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <img src="images/team/pic4.jpg" alt="" class="img-responsive">
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                            </div>
+                        </div>
+                        <h3>Vicky</h3>
+                        <h5>Chief Designer</h5>
+                    </div>
+                    
+                </div>  <!-- item wrapper end -->
+            </div>
+        </div>
+    </div> <!-- Conatiner Team end -->
+</section>  <!-- Section TEam End -->
+
+<!-- Our Team Members End -->
+<div class="clearfix"></div>
+
+<!-- Conatct Area Start-->
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+  			<div class="col-md-12">
+                <div class="feature_header text-center">
+                    <h3 class="feature_title">Keep In <b>touch</b></h3>
+                    <h4 class="feature_sub">Have a Question in Mind? Leave a message. We are happy to reply. </h4>
+                    <div class="divider"></div>
+                </div>
+  			</div>
+        </div>
+        <div class="row">
+             <div class="contact_full">
+                <div class="col-md-6 left">
+                    <div class="left_contact">
+                        <form action="role">
+                            <div class="form-level">
+                                <input name="name" placeholder="Name" id="name"  value="" type="text" class="input-block">
+                                <span class="form-icon fa fa-user"></span>
+                            </div>
+                            <div class="form-level">
+                                <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
+                                <span class="form-icon fa fa-envelope-o"></span>
+                            </div>
+                            <div class="form-level">
+                                <input name="name" placeholder="Phone" id="phone" class="input-block" value="" type="text">
+                                <span class="form-icon fa fa-phone"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 right">
+                    <div class="form-level">
+                        <textarea name="" id="messege"  rows="5" class="textarea-block" placeholder="message"></textarea>
+                        <span class="form-icon fa fa-pencil"></span>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-main featured">Submit Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="g-map" class="no-padding">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="map" id="map"></div>
+		</div>
+	</div>
+</div>
+<!-- Footer Area Start -->
+
+<section id="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Main Menu</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="#about">Home</a></li>
+                            <li><a href="#service">Service</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Useful Links</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="menu_head">Contact us</h3>
+                    <div class="footer_menu_contact">
+                        <ul>
+                            <li> <i class="fa fa-home"></i>
+                                <span> 1560, Southwest Expressway </span></li>
+                            <li><i class="fa fa-globe"></i>
+                                <span> +408-618-1054</span></li>
+                            <li><i class="fa fa-phone"></i>
+                                <span> info@mail.com</span></li>
+                            <li><i class="fa fa-map-marker"></i>
+                            <span> http://tinyurl.com/pezszlt</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_b">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer_bottom">
+                        <p class="text-block"> &copy; Copyright reserved to <span></span></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer_mid pull-right">
+                        <ul class="social-contact list-inline">
+                            <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
+                            <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer Area End -->
+
+
+
+<!-- Back To Top Button -->
+       <!--  <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+                <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+            </div> -->
+    <div id="back-top">
+        <a href="#slider_part" class="scroll" data-scroll>
+            <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-up"></i></button>
+        </a>
+    </div>
+    <!-- End Back To Top Button -->
+
+
+
+<!-- Javascript Files
+    ================================================== -->
+    <!-- initialize jQuery Library -->
+
+		<!-- initialize jQuery Library -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+        <!-- Bootstrap jQuery -->
+         <script src="js/bootstrap.min.js"></script>
+        <!-- Owl Carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Isotope -->
+        <script src="js/jquery.isotope.js"></script>
+        <!-- Pretty Photo -->
+		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+        <!-- SmoothScroll -->
+        <script type="text/javascript" src="js/smooth-scroll.js"></script>
+        <!-- Image Fancybox -->
+        <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <!-- Counter  -->
+        <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="js/waypoints.min.js"></script>
+        <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+   		<!-- PrettyPhoto -->
+        <script src="js/jquery.singlePageNav.js"></script>
+      	<!-- Wow Animation -->
+        <script type="js/javascript" src="js/wow.min.js"></script>
+        <!-- Google Map  Source -->
+        <script type="text/javascript" src="js/gmaps.js"></script>
+			<!-- Custom js -->
+        <script src="js/custom.js"></script>
+        <script src="js/homePageJS.js"></script>
+	<script>
+	
+	
+    
+		// Google Map - with support of gmaps.js
+     var map;
+        map = new GMaps({
+          div: '#map',
+          lat: 37.308745,
+          lng: -121.917850,
+          scrollwheel: true,
+          panControl: true,
+          zoomControl: true,
+        });
+
+        map.addMarker({
+          lat: 37.308745,
+          lng: -121.917850,
+          title: 'Headquarters',
+          infoWindow: { 
+            content: '<p> Headquarters</p>'
+          },
+          icon: "images/map1.png"
+        });
+      	</script>
+ 
+    </body>
+</html>

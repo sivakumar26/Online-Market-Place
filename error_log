@@ -1,0 +1,8 @@
+[18-Nov-2015 15:27:13] PHP Parse error:  syntax error, unexpected T_STRING in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 79
+[18-Nov-2015 15:27:15] PHP Parse error:  syntax error, unexpected T_STRING in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 79
+[18-Nov-2015 15:35:40] PHP Parse error:  syntax error, unexpected '<' in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 85
+[18-Nov-2015 15:35:42] PHP Parse error:  syntax error, unexpected '<' in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 85
+[18-Nov-2015 15:42:08] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 87
+[18-Nov-2015 19:06:34] PHP Parse error:  syntax error, unexpected T_STRING in /home5/saikris1/public_html/onlinemarketplace/productList.php on line 97
+[18-Nov-2015 19:30:59] PHP Parse error:  syntax error, unexpected T_STRING in /home5/saikris1/public_html/onlinemarketplace/getProducts.php on line 14
+[18-Nov-2015 19:31:01] PHP Parse error:  syntax error, unexpected T_STRING in /home5/saikris1/public_html/onlinemarketplace/getProducts.php on line 14

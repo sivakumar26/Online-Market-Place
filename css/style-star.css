@@ -1,0 +1,83 @@
+.rating {
+	
+	width: 200px;
+
+	height: 34px;
+
+	background-color: #ffffff;
+
+}
+
+
+.rating label {
+
+	text-indent: -100px;
+
+	width: 40px !important;
+
+	height: 30px;
+
+	overflow: hidden;
+
+	cursor: pointer;
+
+}
+
+
+.label {
+
+	float: left;
+	
+	padding-top: 3px;
+
+}
+
+
+input[type="radio"]
+ {
+
+	padding-right: 4px;
+
+	position: absolute;
+
+	visibility: hidden;
+	margin-top: 10px;
+
+}
+			
+
+input[type="radio"],
+.rating label.stars
+{
+
+	float: right;
+
+	line-height: 30px;
+
+	height: 30px;
+
+}
+
+
+
+
+.rating label.stars
+ {
+		
+	background: transparent url('../img/star_off.png') no-repeat center center;
+
+}
+
+
+.rating label.stars:hover ~ label.stars,
+ 
+.rating label.stars:hover, 
+.rating input[type=radio][name=stars]:checked ~ label.stars {
+
+	background-image: url('../img/star.png');
+	counter-increment: checkbox;
+
+}
+
+
+
